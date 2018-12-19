@@ -96,7 +96,7 @@ function mt:DestroyPanel()
     self.destroyByPandora = true;
     self:RemoveEventListeners();
     Common.DestroyPanel(__ACTION_NAME__Settings.panelName);
-    self.panel:OnDestroy();
+    self.panel = nil;
     self.gameObject = nil;
     __ACTION_NAME__Messager.Closed(__ACTION_NAME__Settings.panelName, self.isPopPanel, self.isEmbeded)
 end
@@ -106,7 +106,7 @@ function mt:OnAbnoramlDestroy()
     Logger.WARN("异常销毁");
     self.destroyByPandora = false;
     Common.DestroyPanel(__ACTION_NAME__Settings.panelName);
-    self.panel:OnDestroy();
+    self.panel = nil;
     self.gameObject = nil;
     __ACTION_NAME__Messager.Closed(__ACTION_NAME__Settings.panelName, self.isPopPanel, self.isEmbeded)
 end

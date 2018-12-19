@@ -16,13 +16,4 @@ function mt:Init(obj)
     -- PanelInit_Insert_Point
 end
 
-
-function mt:OnDestroy()
-    for key, var in pairs(self) do
-        if type(var) ~= "function" then
-            self[key] = nil;
-        end
-    end
-end
-
 return mt;

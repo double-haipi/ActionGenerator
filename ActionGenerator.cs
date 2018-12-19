@@ -1,4 +1,4 @@
-﻿//#define USING_UGUI
+//#define USING_UGUI
 #define USING_NGUI
 
 using UnityEngine;
@@ -162,6 +162,7 @@ namespace com.tencent.pandora.tools
                 return;
             }
 #endif
+            instance.layer = LayerMask.NameToLayer("UI");
             Transform instanceTransform = instance.transform;
             instanceTransform.SetParent(parent.transform);
             instanceTransform.localPosition = Vector3.zero;
